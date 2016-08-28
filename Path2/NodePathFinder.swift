@@ -15,7 +15,7 @@ protocol Node {
 }
 
 enum Action {
-    case Pop,Push
+    case Up, Down
 }
 
 struct ActionItem {
@@ -93,8 +93,8 @@ func dropCommonItems(arrA:[Node.Type], arrB: [Node.Type]) -> ([Node.Type],[Node.
 
 func buildPath(arrA:[Node.Type], arrB: [Node.Type]) -> [ActionItem] {
     let (newA, newB) = dropCommonItems(arrA, arrB: arrB)
-    let resA = newA.reverse().map { ActionItem(action: .Pop, node: $0) }
-    let resB = newB.map { ActionItem(action: .Push, node: $0) }
+    let resA = newA.reverse().map { ActionItem(action: .Up, node: $0) }
+    let resB = newB.map { ActionItem(action: .Down, node: $0) }
     
     return resA + resB
 }

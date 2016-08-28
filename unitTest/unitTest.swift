@@ -14,8 +14,8 @@ class unitTest: XCTestCase {
     
     func testExample() {
         result = pathBetweenNodes(destination: "1_1_1_3", from: S1_1_1_1.self)
-        assertActionItem(0, action: .Pop, node: S1_1_1_1.self)
-        assertActionItem(0, action: .Push, node: S1_1_1_3.self)
+        assertActionItem(0, action: .Up, node: S1_1_1_1.self)
+        assertActionItem(1, action: .Down, node: S1_1_1_3.self)
     }
     
     private func assertActionItem(idx: Int, action: Action, node: Node.Type){
