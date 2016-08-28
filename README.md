@@ -1,1 +1,1 @@
-# Finds a path and direction of movment between two nodes in a tree
+# Finds a path between two nodes in a tree
