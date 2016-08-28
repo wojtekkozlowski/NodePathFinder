@@ -9,12 +9,6 @@
 import Foundation
 
 
-//S1.printChildren()
-
-let result = pathBetweenNodes(destination: "1_1_1_3", from: S1_1_1_1.self)
-result.forEach { print($0) }
-
-
 
 
 
