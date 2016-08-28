@@ -71,28 +71,23 @@ func pathBetweenNodes(destination destination:String, from currentNode: Node.Typ
         let pathToBFromRoot = pathToNodeFromRoot(destination: destination, from: S1.self)
         return buildPath(pathToAFromRoot, arrB: pathToBFromRoot)
     } else {
-        return []
+        return pathToA.map { ActionItem(action: .Down, node: $0) }
     }
 }
 
-func dropCommonItems(arrA:[Node.Type], arrB: [Node.Type]) -> ([Node.Type],[Node.Type]){
-    var newA = arrA
-    var newB = arrB
-    
-    let maxI = min(arrA.count, arrB.count)
-    
-    for i in (0..<maxI) {
-        if arrA[i] == arrB[i] {
-            newA = Array(newA.dropFirst())
-            newB = Array(newB.dropFirst())
+func dropCommonItems(a a:[Node.Type], b: [Node.Type]) -> ([Node.Type],[Node.Type]){
+    for (index, elementTuple) in zip(a, b).enumerate() {
+        if elementTuple.0 != elementTuple.1 {
+            let newA = Array(a[index..<a.count])
+            let newB = Array(b[index..<b.count])
+            return (newA, newB)
         }
     }
-    
-    return (newA, newB)
+    return (a, b)
 }
 
 func buildPath(arrA:[Node.Type], arrB: [Node.Type]) -> [ActionItem] {
-    let (newA, newB) = dropCommonItems(arrA, arrB: arrB)
+    let (newA, newB) = dropCommonItems(a: arrA, b: arrB)
     let resA = newA.reverse().map { ActionItem(action: .Up, node: $0) }
     let resB = newB.map { ActionItem(action: .Down, node: $0) }
     
