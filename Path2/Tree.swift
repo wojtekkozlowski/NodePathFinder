@@ -9,72 +9,201 @@
 import Foundation
 
 
-struct A: Node {
-    static let name = "A"
-    static let children: [Node.Type] = [AA.self, AB.self, AC.self]
+struct S1: Node {
+    static let name = "1"
+    static let children: [Node.Type] = [S1_1.self, S1_2.self, S1_3.self]
 }
 
-struct AA: Node  {
-    static let name = "AA"
-    static let children: [Node.Type] = [AAA.self,AAB.self, AAC.self]
+struct S1_1: Node  {
+    static let name = "1_1"
+    static let children: [Node.Type] = [S1_1_1.self,S1_1_2.self, S1_1_3.self]
 }
 
 
-struct AB: Node  {
-    static let name = "AB"
-    static let children: [Node.Type] = [ABA.self,ABB.self, ABC.self]
+struct S1_2: Node  {
+    static let name = "1_2"
+    static let children: [Node.Type] = [S1_2_1.self,S1_2_2.self, S1_2_3.self]
 }
 
-struct AC: Node  {
-    static let name = "AC"
-    static let children: [Node.Type] = [ACA.self,ACB.self, ACC.self]
+struct S1_3: Node  {
+    static let name = "1_3"
+    static let children: [Node.Type] = [S1_3_1.self,S1_3_2.self, S1_3_3.self]
 }
 
-struct AAA: Node  {
-    static let name = "AAA"
+struct S1_1_1: Node  {
+    static let name = "1_1_1"
+    static let children: [Node.Type] = [S1_1_1_1.self, S1_1_1_2.self, S1_1_1_3.self]
+}
+
+struct S1_1_1_1: Node  {
+    static let name = "1_1_1_1"
+    static let children: [Node.Type] = []
+}
+struct S1_1_1_2: Node  {
+    static let name = "1_1_1_2"
+    static let children: [Node.Type] = []
+}
+struct S1_1_1_3: Node  {
+    static let name = "1_1_1_3"
     static let children: [Node.Type] = []
 }
 
-struct AAB: Node  {
-    static let name = "AAB"
+
+
+struct S1_1_2: Node  {
+    static let name = "1_1_2"
+    static let children: [Node.Type] = [S1_1_2_1.self, S1_1_2_2.self, S1_1_2_3.self]
+}
+
+struct S1_1_2_1: Node  {
+    static let name = "1_1_2_1"
+    static let children: [Node.Type] = []
+}
+struct S1_1_2_2: Node  {
+    static let name = "1_1_2_2"
+    static let children: [Node.Type] = []
+}
+struct S1_1_2_3: Node  {
+    static let name = "1_1_2_3"
     static let children: [Node.Type] = []
 }
 
-struct AAC: Node  {
-    static let name = "AAC"
+
+
+struct S1_1_3: Node  {
+    static let name = "1_1_3"
+    static let children: [Node.Type] = [S1_1_3_1.self, S1_1_3_2.self, S1_1_3_3.self]
+}
+
+struct S1_1_3_1: Node  {
+    static let name = "1_1_3_1"
+    static let children: [Node.Type] = []
+}
+struct S1_1_3_2: Node  {
+    static let name = "1_1_3_2"
+    static let children: [Node.Type] = []
+}
+struct S1_1_3_3: Node  {
+    static let name = "1_1_3_3"
     static let children: [Node.Type] = []
 }
 
 
-struct ABA: Node  {
-    static let name = "ABA"
+
+struct S1_2_1: Node  {
+    static let name = "1_2_1"
+    static let children: [Node.Type] = [S1_2_1_1.self, S1_2_1_2.self, S1_2_1_3.self]
+}
+
+struct S1_2_1_1: Node  {
+    static let name = "1_2_1_1"
+    static let children: [Node.Type] = []
+}
+struct S1_2_1_2: Node  {
+    static let name = "1_2_1_2"
+    static let children: [Node.Type] = []
+}
+struct S1_2_1_3: Node  {
+    static let name = "1_2_1_3"
     static let children: [Node.Type] = []
 }
 
-struct ABB: Node  {
-    static let name = "ABB"
+
+
+struct S1_2_2: Node  {
+    static let name = "1_2_2"
+    static let children: [Node.Type] = [S1_2_2_1.self,S1_2_2_2.self, S1_2_2_3.self]
+}
+
+struct S1_2_2_1: Node  {
+    static let name = "1_2_2_1"
+    static let children: [Node.Type] = []
+}
+struct S1_2_2_2: Node  {
+    static let name = "1_2_2_2"
+    static let children: [Node.Type] = []
+}
+struct S1_2_2_3: Node  {
+    static let name = "1_2_2_3"
     static let children: [Node.Type] = []
 }
 
-struct ABC: Node  {
-    static let name = "ABC"
+
+struct S1_2_3: Node  {
+    static let name = "1_2_3"
+    static let children: [Node.Type] = [S1_2_3_1.self, S1_2_3_2.self, S1_2_3_3.self]
+}
+
+struct S1_2_3_1: Node  {
+    static let name = "1_2_3_1"
+    static let children: [Node.Type] = []
+}
+struct S1_2_3_2: Node  {
+    static let name = "1_2_3_1"
+    static let children: [Node.Type] = []
+}
+struct S1_2_3_3: Node  {
+    static let name = "1_2_3_3"
     static let children: [Node.Type] = []
 }
 
-struct ACA: Node  {
-    static let name = "ACA"
+
+struct S1_3_1: Node  {
+    static let name = "1_3_1"
+    static let children: [Node.Type] = [S1_3_1_1.self, S1_3_1_2.self, S1_3_1_3.self]
+}
+
+struct S1_3_1_1: Node  {
+    static let name = "1_3_1_1"
+    static let children: [Node.Type] = []
+}
+struct S1_3_1_2: Node  {
+    static let name = "1_3_1_2"
+    static let children: [Node.Type] = []
+}
+struct S1_3_1_3: Node  {
+    static let name = "1_3_1_3"
     static let children: [Node.Type] = []
 }
 
-struct ACB: Node  {
-    static let name = "ACB"
+
+struct S1_3_2: Node  {
+    static let name = "1_3_2"
     static let children: [Node.Type] = []
 }
 
-struct ACC: Node  {
-    static let name = "ACC"
+struct S1_3_2_1: Node  {
+    static let name = "1_3_2_1"
+    static let children: [Node.Type] = [S1_3_2_1.self, S1_3_2_2.self, S1_3_2_3.self]
+}
+struct S1_3_2_2: Node  {
+    static let name = "1_3_2_2"
     static let children: [Node.Type] = []
 }
+struct S1_3_2_3: Node  {
+    static let name = "1_3_2_3"
+    static let children: [Node.Type] = []
+}
+
+
+struct S1_3_3: Node  {
+    static let name = "1_3_3"
+    static let children: [Node.Type] = [S1_3_3_1.self, S1_3_3_2.self, S1_3_3_3.self]
+}
+
+struct S1_3_3_1: Node  {
+    static let name = "1_3_3_1"
+    static let children: [Node.Type] = []
+}
+struct S1_3_3_2: Node  {
+    static let name = "1_3_3_2"
+    static let children: [Node.Type] = []
+}
+struct S1_3_3_3: Node  {
+    static let name = "1_3_3_3"
+    static let children: [Node.Type] = []
+}
+
 
 
 
