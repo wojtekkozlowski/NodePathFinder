@@ -23,6 +23,7 @@ struct ActionItem {
     let node: Node.Type
 }
 
+
 func pathToNodeFromRoot(destination destination:String, from currentNode: Node.Type) -> [Node.Type] {
     if currentNode.name == destination {
         return [currentNode]
@@ -37,11 +38,11 @@ func pathToNodeFromRoot(destination destination:String, from currentNode: Node.T
     }
 }
 
-func pathBetweenNodes(destination destination:String, from currentNode: Node.Type) -> [ActionItem] {
+func pathBetweenNodes(destination destination:String, from currentNode: Node.Type, rootNode: Node.Type) -> [ActionItem] {
     let pathToA = pathToNodeFromRoot(destination: destination, from: currentNode)
     if pathToA.count == 0 {
-        let pathToAFromRoot = pathToNodeFromRoot(destination: currentNode.name, from: S1.self)
-        let pathToBFromRoot = pathToNodeFromRoot(destination: destination, from: S1.self)
+        let pathToAFromRoot = pathToNodeFromRoot(destination: currentNode.name, from: rootNode)
+        let pathToBFromRoot = pathToNodeFromRoot(destination: destination, from: rootNode)
         return buildPath(pathToAFromRoot, arrB: pathToBFromRoot)
     } else {
         return pathToA.map { ActionItem(action: .Down, node: $0) }
