@@ -8,8 +8,6 @@
 
 import Foundation
 
-import Foundation
-
 protocol Node {
     static var name: String {get}
     static var children: [Node.Type] {get}
@@ -29,9 +27,21 @@ func pathTo(destination destination:String, from currentNode: Node.Type) -> [Nod
     }
 }
 
-let result = pathTo(destination: "ACB", from: A.self)
-//printNodes(from: A.self, spaces: "")
+func pathTo2(destination destination:String, from currentNode: Node.Type) -> [ActionItem] {
+    let pathToA = pathTo(destination: destination, from: currentNode)
+    if pathToA.count == 0 {
+        let pathToAFromRoot = pathTo(destination: currentNode.name, from: A.self)
+        let pathToBFromRoot = pathTo(destination: destination, from: A.self)
+        return merge(pathToAFromRoot, arrB: pathToBFromRoot)
+    } else {
+        return []
+    }
+}
+
+let result = pathTo2(destination: "ACC", from: AAA.self)
 print(result)
+
+
 
 
 
