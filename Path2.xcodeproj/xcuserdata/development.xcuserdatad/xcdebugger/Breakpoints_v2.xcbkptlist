@@ -15,22 +15,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
             endingLineNumber = "84"
-            landmarkName = "buildPath(_:arrB:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Path2/NodePathFinder.swift"
-            timestampString = "494144183.178474"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
             landmarkName = "dropCommonItemsBarLast(a:b:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,12 +26,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Path2/NodePathFinder.swift"
-            timestampString = "494144195.584855"
+            timestampString = "494150849.012161"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "dropCommonItemsBarLast(a:b:)"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "pathBetweenNodes(destination:from:rootNode:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Path2/NodePathFinder.swift"
+            timestampString = "494150849.361467"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "pathBetweenNodes(destination:from:rootNode:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

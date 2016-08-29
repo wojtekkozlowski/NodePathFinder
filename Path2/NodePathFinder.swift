@@ -11,7 +11,14 @@ import Foundation
 protocol Node {
     static var name: String {get}
     static var children: [Node.Type] {get}
+    func navigateTo(path:[Node.Type])
     static func printChildren(from currentNode: Node.Type, spaces:String, deep: Int)
+}
+
+extension Node {
+    func navigateTo(path:[Node.Type]) {
+        
+    }
 }
 
 enum Action {
@@ -39,7 +46,8 @@ func pathToNodeFromRoot(destination destination:String, from currentNode: Node.T
 }
 
 func pathBetweenNodes(destination destination:String, from currentNode: Node.Type, rootNode: Node.Type) -> [ActionItem] {
-    let pathToA = pathToNodeFromRoot(destination: destination, from: currentNode)
+    let pathToA = pathToNodeFromRoot(destination: destination, from: currentNode).dropFirst()
+    print(pathToA)
     if pathToA.count == 0 {
         let pathToAFromRoot = pathToNodeFromRoot(destination: currentNode.name, from: rootNode)
         let pathToBFromRoot = pathToNodeFromRoot(destination: destination, from: rootNode)
