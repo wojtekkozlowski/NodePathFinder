@@ -49,23 +49,43 @@ func pathBetweenNodes(destination destination:String, from currentNode: Node.Typ
     }
 }
 
-func dropCommonItems(a a:[Node.Type], b: [Node.Type]) -> ([Node.Type],[Node.Type]){
-    for (index, elementTuple) in zip(a, b).enumerate() {
-        if elementTuple.0 != elementTuple.1 {
-            let newA = Array(a[index..<a.count])
-            let newB = Array(b[index..<b.count])
-            return (newA, newB)
+func dropCommonItemsBarLast(a a:[Node.Type], b: [Node.Type]) -> ([Node.Type],[Node.Type]){
+    var newA = a
+    var newB = b
+    
+    print(newA)
+    print(newB)
+    
+    let minI = min(a.count, b.count)
+    var lastItem: Node.Type?
+    
+    for i in (0..<minI) {
+        if a[i] == b[i] {
+            lastItem = a[i]
+            newA = Array(newA.dropFirst())
+            newB = Array(newB.dropFirst())
         }
     }
-    return (a, b)
-}
+    if let lastItem = lastItem {
+        newA.insert(lastItem, atIndex: 0)
+        newB.insert(lastItem, atIndex: 0)
+    }
+    
+    print(newA)
+    print(newB)
+    
+    return (newA, newB)}
 
 func buildPath(arrA:[Node.Type], arrB: [Node.Type]) -> [ActionItem] {
-    let (newA, newB) = dropCommonItems(a: arrA, b: arrB)
-    let resA = newA.reverse().map { ActionItem(action: .Up, node: $0) }
-    let resB = newB.map { ActionItem(action: .Down, node: $0) }
+    let (newA, newB) = dropCommonItemsBarLast(a: arrA, b: arrB)
+    let resA = newA.first.map({ ActionItem(action: .Up, node: $0) })
+    let resB = newB.dropFirst().map { ActionItem(action: .Down, node: $0) }
     
-    return resA + resB
+    if let resA = resA {
+        return [resA] + resB
+    } else {
+        return resB
+    }
 }
 
 
